@@ -6,12 +6,11 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
-  <BrowserRouter basename="/">
-      <App/>
-  </BrowserRouter>,
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>
 
-  document.getElementById('root')
-);
+    , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

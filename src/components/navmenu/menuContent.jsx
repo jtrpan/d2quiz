@@ -23,6 +23,14 @@ class MenuContent extends Component {
                         Home
                     </Link>
                 </div>
+                <div className="menu-item">
+                    <Link
+                        to="/quiz"
+                        onClick={this.props.closeCallback}
+                    >
+                        Quiz
+                    </Link>
+                </div>
                 <p className="hint">
                     Powered by React.
                     Made by Trissin.

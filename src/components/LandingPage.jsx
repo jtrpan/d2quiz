@@ -50,7 +50,7 @@ class Landing extends Component {
                                 You think you know Destiny?
                             </Fade>
                         </div>
-                        <br/>
+                        <br/><br/>
                         <Fade duration={1800} delay={3000}>
                         <a
                             href="quiz"

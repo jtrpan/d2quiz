@@ -19,7 +19,7 @@
 .menu-item a:hover {
     color: white;
     text-decoration: none;
-    background-color: #070B34;
+    background-color: #a5a7bd;
 }
 
 .menu-item a:focus {
@@ -27,7 +27,7 @@
 }
 
 .active-menu-item {
-    background-color: #070B34;
+    background-color: #757793;
 }
 
 .hint {

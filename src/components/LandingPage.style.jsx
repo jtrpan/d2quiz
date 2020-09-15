@@ -8,6 +8,8 @@ export const Heading = styled.h1`
   overflow: hidden;
 
   .city-link {
+    font-family: Montserrat;
+    color: #000000;
     text-decoration: none;
     display: inline-block;
     user-select: none;  
@@ -22,6 +24,7 @@ export const Heading = styled.h1`
   }
 
   .city-link_content {
+    font-family: Fjalla One;
     display: block;
     color: #D7E5E6;
     text-align: center;
@@ -43,13 +46,14 @@ export const Heading = styled.h1`
   }
 
   .scrollTitle {
+    font-family: Raleway;
       color: #C9BEFF;
       pointer-events: none;
       text-align: center;
   }
 
   .helloTitle {
-    font-family: Comfortaa;
+    font-family: Raleway;
     color: #ACA9BB;
     pointer-events: none;
     text-align: center;

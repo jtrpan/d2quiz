@@ -10,7 +10,8 @@ class perkQuiz extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            open:true
+            open:true,
+            quizStarted: false,
         }
     }
     componentDidMount() {
@@ -23,10 +24,37 @@ class perkQuiz extends Component {
     render() {
         return(
             <Styled.Wrapper>
+                <Particles
+                    params={{
+                        particles: {
+                            number: {
+                                value: 140,
+                            },
+                            size: {
+                                value: 2
+                            }
+                        },
+                        interactivity: {
+                            detect_on: "canvas",
+                            events: {
+                                onhover: {
+                                    enable: true,
+                                    mode: "repulse"
+                                },
+                                onclick: {
+                                    enable: true,
+                                    mode: "push"
+                                },
+                                resize: true
+                            },
+                        },
+                        "retina_detect": true
+                    }}
+                />
                 <Styled.Heading>
                     <div>
-                        <br/>
-                        <div className="questionLine">
+                        <br/><br/><br/>
+                        <div className={this.state.quizStarted?"removed":"questionLine"}>
                             <Bounce left duration={1000}>
                                 Ready to test your knowledge?
                             </Bounce>
@@ -34,52 +62,32 @@ class perkQuiz extends Component {
 
                         <div>
                             <Fade duration={1000} delay={1500}>
-                                <a href="" rel="noopener noreferrer" className="contact-link" aria-label="Projects Page">
+                                <div className={this.state.quizStarted?"removed":"contact-link"} onClick={ () => {
+                                    this.setState({ quizStarted: true })
+                                }}>
                                     <span tabIndex="-1" className="contact-link_content">
                                         Start the quiz.
                                     </span>
-                                </a>
+                                </div>
                             </Fade>
                         </div>
                         <br/>
                         <br/>
 
-                        <div className="contactLine">
+                        <div className={this.state.quizStarted?"removed":"contactLine"}>
                             <Fade bottom cascade duration={1000} delay={2500}>
                                 <div>
                                     Good luck, guardian.
                                 </div>
                             </Fade>
                             <br/>
+                            <Fade bottom cascade duration={1000} delay={4000}>
+                                <div>
+                                    You'll need it.
+                                </div>
+                            </Fade>
                         </div>
                     </div>
-                    <Particles
-                        params={{
-                            particles: {
-                                number: {
-                                    value: 120,
-                                },
-                                size: {
-                                    value: 2
-                                }
-                            },
-                            interactivity: {
-                                detect_on: "canvas",
-                                events: {
-                                    onhover: {
-                                        enable: true,
-                                        mode: "repulse"
-                                    },
-                                    onclick: {
-                                        enable: true,
-                                        mode: "push"
-                                    },
-                                    resize: true
-                                },
-                            },
-                            "retina_detect": true
-                        }}
-                    />
                 </Styled.Heading>
             </Styled.Wrapper>
         )

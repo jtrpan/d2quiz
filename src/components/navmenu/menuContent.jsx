@@ -32,7 +32,6 @@ class MenuContent extends Component {
                     </Link>
                 </div>
                 <p className="hint">
-                    Powered by React.
                     Made by Trissin.
                 </p>
             </div>

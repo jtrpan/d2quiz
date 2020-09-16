@@ -29,7 +29,7 @@ export const Heading = styled.h1`
 .contactLine {
   position: absolute;
   left: 22%;
-  bottom: 12%;
+  bottom: 10%;
   right: 0;
   font-size: calc(12px + (64 - 34) * ((100vw - 320px) / (1700 - 320))) !important;
   text-align: left;
@@ -62,11 +62,11 @@ export const Heading = styled.h1`
 
 .contact-link_content {
   display: block;
-  color: #7395ae;
+  color: #7300ea;
 }
 
 .contact-link:hover > .contact-link_content {
-  color: #557a95;
+  color: #f4aff3;
   transform: scale(1.1);
 
   /* Block "sticky hover" effect on mobile devices */
@@ -104,6 +104,13 @@ export const Heading = styled.h1`
 
 .contactButton:hover {
   transform: scale(1.6);
+}
+
+.removed{
+  pointer-events: none;
+  opacity:0;
+  width:0;
+  height:0;
 }
 `;
 

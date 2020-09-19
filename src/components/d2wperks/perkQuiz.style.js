@@ -46,6 +46,8 @@ export const Heading = styled.h1`
   text-align: left;
   font-family: Montserrat;
   color: #c0c3c4;
+  max-width: 10%;
+  max-height: 10%;
 }
 
 @media (min-width: 1400px){

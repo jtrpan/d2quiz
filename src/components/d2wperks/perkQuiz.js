@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import Bounce from 'react-reveal/Bounce';
 import Fade from 'react-reveal/Fade';
+import { Container, Row, Col,} from "reactstrap";
+
 
 import * as Styled from './perkQuiz.style';
 import './perkQuiz.style.js';
 import Particles from "react-particles-js";
 import Quiz from 'react-quiz-component';
 import { quiz1 } from './quiz.js';
+
+const renderCustomResultPage = (obj) => {
+    console.log(obj);
+    return (
+        <div>
+            This is a custom result page. You can use obj to render your custom result page
+        </div>
+    )
+}
 
 class perkQuiz extends Component {
     constructor(props) {
@@ -73,11 +84,17 @@ class perkQuiz extends Component {
                                 </div>
                             </Fade>
                         </div>
+
+
+
+
                         <div className={this.state.quizStarted?"quizBlock":"removed"}>
                             <Quiz quiz={quiz1} showInstantFeedback={true} showDefaultResult={false}/>
                         </div>
                         <br/>
                         <br/>
+
+
 
                         <div className={this.state.quizStarted?"removed":"contactLine"}>
                             <Fade bottom cascade duration={1000} delay={2500}>

@@ -1,0 +1,59 @@
+diff --git a/node_modules/react-quiz-component/lib/Core.js b/node_modules/react-quiz-component/lib/Core.js
+index d7681c2..9e20984 100644
+--- a/node_modules/react-quiz-component/lib/Core.js
++++ b/node_modules/react-quiz-component/lib/Core.js
+@@ -266,7 +266,8 @@ var Card = function Card(_ref) {
+         dangerouslySetInnerHTML: (0, _helpers.rawMarkup)("Q".concat(question.questionIndex, ": ").concat(question.question))
+       }), question.questionPic && _react.default.createElement("img", {
+         src: question.questionPic,
+-        alt: "image"
++        alt: "image",
++        className: "myImage"
+       }), renderTags(answerSelectionType, question.correctAnswer.length, question.segment), _react.default.createElement("div", {
+         className: "result-answer"
+       }, renderAnswerInResult(question, userInputIndex)), _react.default.createElement(_Explanation.default, {
+@@ -370,7 +371,8 @@ var Card = function Card(_ref) {
+     dangerouslySetInnerHTML: (0, _helpers.rawMarkup)(question && question.question)
+   }), question && question.questionPic && _react.default.createElement("img", {
+     src: question.questionPic,
+-    alt: "image"
++    alt: "image",
++    className: "myImage"
+   }), question && renderTags(answerSelectionTypeState, question.correctAnswer.length, question.segment), question && renderAnswers(question, buttons), showNextQuestionButton && _react.default.createElement("div", null, _react.default.createElement("button", {
+     onClick: function onClick() {
+       return nextQuestion(currentQuestionIndex);
+diff --git a/node_modules/react-quiz-component/lib/styles.css b/node_modules/react-quiz-component/lib/styles.css
+index d039db8..e952d6b 100644
+--- a/node_modules/react-quiz-component/lib/styles.css
++++ b/node_modules/react-quiz-component/lib/styles.css
+@@ -1,6 +1,6 @@
+ .react-quiz-container {
+   margin: 20px;
+-  width: 500px;
++  width: 800px;
+ }
+ 
+ .react-quiz-container .startQuizWrapper {
+@@ -59,7 +59,7 @@
+ }
+ 
+ .react-quiz-container .questionWrapper img {
+-  width: 100%;
++  width: 1000%;
+ }
+ 
+ .react-quiz-container .answerBtn {
+@@ -106,6 +106,13 @@
+   padding: 0px 20px;
+ }
+ 
++.react-quiz-container .myImage {
++    width: 2;
++    height: 2;
++    max-width: 2;
++    max-height: 2;
++}
++
+ .react-quiz-container .quiz-synopsis {
+   margin: 15px 0px;
+ }

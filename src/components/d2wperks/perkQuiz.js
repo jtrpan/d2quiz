@@ -5,6 +5,8 @@ import Fade from 'react-reveal/Fade';
 import * as Styled from './perkQuiz.style';
 import './perkQuiz.style.js';
 import Particles from "react-particles-js";
+import Quiz from 'react-quiz-component';
+import { quiz1 } from './quiz.js';
 
 class perkQuiz extends Component {
     constructor(props) {
@@ -70,6 +72,9 @@ class perkQuiz extends Component {
                                     </span>
                                 </div>
                             </Fade>
+                        </div>
+                        <div className={this.state.quizStarted?"quizBlock":"removed"}>
+                            <Quiz quiz={quiz1} showInstantFeedback={true} showDefaultResult={false}/>
                         </div>
                         <br/>
                         <br/>

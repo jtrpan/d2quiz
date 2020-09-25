@@ -9,15 +9,7 @@ import './perkQuiz.style.js';
 import Particles from "react-particles-js";
 import Quiz from 'react-quiz-component';
 import { quiz1 } from './quiz.js';
-
-const renderCustomResultPage = (obj) => {
-    console.log(obj);
-    return (
-        <div>
-            This is a custom result page. You can use obj to render your custom result page
-        </div>
-    )
-}
+import quiz2 from "./quiz2";
 
 class perkQuiz extends Component {
     constructor(props) {
@@ -25,6 +17,11 @@ class perkQuiz extends Component {
         this.state = {
             open:true,
             quizStarted: false,
+            quiz2Started: false,
+            correct: 0,
+            incorrect: 0,
+            totalPoints: 0,
+            userPoints: 0,
         }
     }
     componentDidMount() {
@@ -32,6 +29,22 @@ class perkQuiz extends Component {
             window.scrollTo(0, 0);
             document.body.style.overflow = 'hidden';
         }
+    }
+
+    onCompleteAction = (obj) => {
+        console.log(obj);
+        return(
+           this.setState({quiz2Started: true,})
+        )
+    }
+
+    renderCustomResultPage = (obj) => {
+        console.log(obj);
+        return (
+            <div>
+                This is a custom result page. You can use obj to render your custom result page
+            </div>
+        )
     }
 
     render() {
@@ -89,7 +102,10 @@ class perkQuiz extends Component {
 
 
                         <div className={this.state.quizStarted?"quizBlock":"removed"}>
-                            <Quiz quiz={quiz1} showInstantFeedback={true} showDefaultResult={false}/>
+                            <Quiz quiz={quiz1} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction}/>
+                            <div className={this.state.quiz2Started?"quizBlock":"removed"}>
+                                <Quiz quiz={quiz2} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage}/>
+                            </div>
                         </div>
                         <br/>
                         <br/>

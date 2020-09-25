@@ -1,6 +1,7 @@
 export const quiz1 =  {
   "quizTitle": "Section 1: Common Perks",
   "quizSynopsis": "Do you know your everyday equipment?",
+
   "appLocale": {
     "landingHeaderText": "<questionLength> Weapon Perks",
     "question": "Perk",
@@ -11,6 +12,7 @@ export const quiz1 =  {
     "nextQuestionBtn": "Next",
     "resultPageHeaderText": "You have completed this section. You got <correctIndexLength> out of <questionLength> questions."
   },
+
   "questions": [
     {
       "answers": [

@@ -31,7 +31,7 @@ index d7681c2..13052eb 100644
      onClick: function onClick() {
        return nextQuestion(currentQuestionIndex);
 diff --git a/node_modules/react-quiz-component/lib/Core.jsx b/node_modules/react-quiz-component/lib/Core.jsx
-index 588903e..ac2a47a 100644
+index 588903e..13b68a0 100644
 --- a/node_modules/react-quiz-component/lib/Core.jsx
 +++ b/node_modules/react-quiz-component/lib/Core.jsx
 @@ -246,7 +246,7 @@ class Core extends Component {
@@ -61,6 +61,30 @@ index 588903e..ac2a47a 100644
                  </div>
                }
              </div>
+@@ -474,6 +477,9 @@ class Core extends Component {
+             { showNextQuestionButton &&
+               <div><button onClick={() => this.nextQuestion(currentQuestionIndex)} className="nextQuestionBtn btn">{appLocale.nextQuestionBtn}</button></div>
+             }
++            <h2>
++              Your current score is {correctPoints} out of {totalPoints} total points.
++            </h2>
+           </div>
+         }
+         { endQuiz && showDefaultResult && customResultPage == null &&
+diff --git a/node_modules/react-quiz-component/lib/Locale.js b/node_modules/react-quiz-component/lib/Locale.js
+index a225d57..c0f3dca 100644
+--- a/node_modules/react-quiz-component/lib/Locale.js
++++ b/node_modules/react-quiz-component/lib/Locale.js
+@@ -16,6 +16,7 @@ var defaultLocale = {
+   "resultPagePoint": "You scored <correctPoints> out of <totalPoints>.",
+   "singleSelectionTagText": "Single Selection",
+   "multipleSelectionTagText": "Multiple Selection",
+-  "pickNumberOfSelection": "Pick <numberOfSelection>"
++  "pickNumberOfSelection": "Choose <numberOfSelection>",
++
+ };
+ exports.defaultLocale = defaultLocale;
+\ No newline at end of file
 diff --git a/node_modules/react-quiz-component/lib/Question.js b/node_modules/react-quiz-component/lib/Question.js
 index 63bb539..712308d 100644
 --- a/node_modules/react-quiz-component/lib/Question.js
@@ -88,29 +112,52 @@ index 69ed568..b447554 100644
          </div>
        )
 diff --git a/node_modules/react-quiz-component/lib/core-components/Explanation.js b/node_modules/react-quiz-component/lib/core-components/Explanation.js
-index 52796b3..1221b9b 100644
+index 52796b3..ef37ad5 100644
 --- a/node_modules/react-quiz-component/lib/core-components/Explanation.js
 +++ b/node_modules/react-quiz-component/lib/core-components/Explanation.js
-@@ -12,10 +12,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
+@@ -11,12 +11,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
+ 
  var Explanation = function Explanation(question, isResultPage) {
    var explanation = question.explanation;
- 
+-
 -  if (!explanation) {
 -    return null;
 -  }
 -
-   if (isResultPage) {
+-  if (isResultPage) {
++  if (1) {
      return _react.default.createElement("div", {
        className: "explanation"
+     }, explanation);
 diff --git a/node_modules/react-quiz-component/lib/core-components/InstantFeedback.js b/node_modules/react-quiz-component/lib/core-components/InstantFeedback.js
-index e37263d..067f1c6 100644
+index e37263d..ff8522e 100644
 --- a/node_modules/react-quiz-component/lib/core-components/InstantFeedback.js
 +++ b/node_modules/react-quiz-component/lib/core-components/InstantFeedback.js
-@@ -33,7 +33,7 @@ var InstantFeedback = function InstantFeedback(_ref) {
+@@ -15,7 +15,8 @@ var InstantFeedback = function InstantFeedback(_ref) {
+   var showInstantFeedback = _ref.showInstantFeedback,
+       incorrectAnswer = _ref.incorrectAnswer,
+       correctAnswer = _ref.correctAnswer,
+-      question = _ref.question;
++      question = _ref.question,
++      explanation = _ref.question.explanation;
+ 
+   var renderMessageForCorrectAnswer = function renderMessageForCorrectAnswer(question) {
+     var defaultMessage = 'You are correct. Please click Next to continue.';
+@@ -29,11 +30,16 @@ var InstantFeedback = function InstantFeedback(_ref) {
+ 
+   return _react.default.createElement(_react.default.Fragment, null, incorrectAnswer && showInstantFeedback && _react.default.createElement("div", {
+     className: "alert incorrect"
+-  }, renderMessageForIncorrectAnswer(question)), correctAnswer && showInstantFeedback && _react.default.createElement("div", {
++  }, renderMessageForIncorrectAnswer(question), _react.default.createElement(_Explanation.default, {
++    question: question,
++    explanation: question.explanation,
++    isResultPage: true
++  })), correctAnswer && showInstantFeedback && _react.default.createElement("div", {
      className: "alert correct"
    }, renderMessageForCorrectAnswer(question), _react.default.createElement(_Explanation.default, {
      question: question,
 -    isResultPage: false
++    explanation: question.explanation,
 +    isResultPage: true
    })));
  };

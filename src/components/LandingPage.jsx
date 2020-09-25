@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TextLoop from "react-text-loop";
 import Particles from 'react-particles-js';
-import { Button, Icon } from 'semantic-ui-react'
 
 import * as Styled from './LandingPage.style';
 import Fade from "react-reveal/Fade";

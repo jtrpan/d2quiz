@@ -30,6 +30,91 @@ index d7681c2..13052eb 100644
    }), question && renderTags(answerSelectionTypeState, question.correctAnswer.length, question.segment), question && renderAnswers(question, buttons), showNextQuestionButton && _react.default.createElement("div", null, _react.default.createElement("button", {
      onClick: function onClick() {
        return nextQuestion(currentQuestionIndex);
+diff --git a/node_modules/react-quiz-component/lib/Core.jsx b/node_modules/react-quiz-component/lib/Core.jsx
+index 588903e..ac2a47a 100644
+--- a/node_modules/react-quiz-component/lib/Core.jsx
++++ b/node_modules/react-quiz-component/lib/Core.jsx
+@@ -246,7 +246,7 @@ class Core extends Component {
+ 
+     if(isResultPage) {
+       return (
+-        <div className="explaination">
++        <div className="explanation">
+           {explanation}
+         </div>
+       )
+@@ -454,12 +454,15 @@ class Core extends Component {
+           <div className="questionWrapperBody">
+             <div className="questionModal">
+               {incorrectAnswer && showInstantFeedback && 
+-                <div className="alert incorrect">{ this.renderMessageforIncorrectAnswer(question) }</div>
++                <div className="alert incorrect">
++                  { this.renderMessageforIncorrectAnswer(question) }
++                  { this.renderExplanation(question, true) }
++                </div>
+               }
+               { correctAnswer && showInstantFeedback && 
+                 <div className="alert correct">
+                   { this.renderMessageforCorrectAnswer(question) } 
+-                  { this.renderExplanation(question, false) }
++                  { this.renderExplanation(question, true) }
+                 </div>
+               }
+             </div>
+diff --git a/node_modules/react-quiz-component/lib/Question.js b/node_modules/react-quiz-component/lib/Question.js
+index 63bb539..712308d 100644
+--- a/node_modules/react-quiz-component/lib/Question.js
++++ b/node_modules/react-quiz-component/lib/Question.js
+@@ -185,7 +185,7 @@ function (_Component) {
+ 
+       if (isResultPage) {
+         return _react.default.createElement("div", {
+-          className: "explaination"
++          className: "explanation"
+         }, explanation);
+       }
+ 
+diff --git a/node_modules/react-quiz-component/lib/Question.jsx b/node_modules/react-quiz-component/lib/Question.jsx
+index 69ed568..b447554 100644
+--- a/node_modules/react-quiz-component/lib/Question.jsx
++++ b/node_modules/react-quiz-component/lib/Question.jsx
+@@ -159,7 +159,7 @@ class Question extends Component {
+     
+     if(isResultPage) {
+       return (
+-        <div className="explaination">
++        <div className="explanation">
+           {explanation}
+         </div>
+       )
+diff --git a/node_modules/react-quiz-component/lib/core-components/Explanation.js b/node_modules/react-quiz-component/lib/core-components/Explanation.js
+index 52796b3..1221b9b 100644
+--- a/node_modules/react-quiz-component/lib/core-components/Explanation.js
++++ b/node_modules/react-quiz-component/lib/core-components/Explanation.js
+@@ -12,10 +12,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
+ var Explanation = function Explanation(question, isResultPage) {
+   var explanation = question.explanation;
+ 
+-  if (!explanation) {
+-    return null;
+-  }
+-
+   if (isResultPage) {
+     return _react.default.createElement("div", {
+       className: "explanation"
+diff --git a/node_modules/react-quiz-component/lib/core-components/InstantFeedback.js b/node_modules/react-quiz-component/lib/core-components/InstantFeedback.js
+index e37263d..067f1c6 100644
+--- a/node_modules/react-quiz-component/lib/core-components/InstantFeedback.js
++++ b/node_modules/react-quiz-component/lib/core-components/InstantFeedback.js
+@@ -33,7 +33,7 @@ var InstantFeedback = function InstantFeedback(_ref) {
+     className: "alert correct"
+   }, renderMessageForCorrectAnswer(question), _react.default.createElement(_Explanation.default, {
+     question: question,
+-    isResultPage: false
++    isResultPage: true
+   })));
+ };
+ 
 diff --git a/node_modules/react-quiz-component/lib/styles.css b/node_modules/react-quiz-component/lib/styles.css
 index d039db8..f6b6767 100644
 --- a/node_modules/react-quiz-component/lib/styles.css

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Bounce from 'react-reveal/Bounce';
 import Fade from 'react-reveal/Fade';
-import { Container, Row, Col,} from "reactstrap";
 
 
 import * as Styled from './perkQuiz.style';
@@ -18,6 +17,7 @@ class perkQuiz extends Component {
             open:true,
             quizStarted: false,
             quiz2Started: false,
+            quiz3Started: false,
             correct: 0,
             incorrect: 0,
             totalPoints: 0,
@@ -31,10 +31,17 @@ class perkQuiz extends Component {
         }
     }
 
-    onCompleteAction = (obj) => {
+    onCompleteAction1 = (obj) => {
         console.log(obj);
         return(
            this.setState({quiz2Started: true,})
+        )
+    }
+
+    onCompleteAction2 = (obj) => {
+        console.log(obj);
+        return(
+            this.setState({quiz3Started: true,})
         )
     }
 
@@ -102,9 +109,12 @@ class perkQuiz extends Component {
 
 
                         <div className={this.state.quizStarted?"quizBlock":"removed"}>
-                            <Quiz quiz={quiz1} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction}/>
+                            <Quiz quiz={quiz1} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction1}/>
                             <div className={this.state.quiz2Started?"quizBlock":"removed"}>
-                                <Quiz quiz={quiz2} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage}/>
+                                <Quiz quiz={quiz2} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction2}/>
+                            </div>
+                            <div className={this.state.quiz3Started?"quizBlock":"removed"}>
+                                Quiz 2 completed, Quiz 3 placeholder
                             </div>
                         </div>
                         <br/>

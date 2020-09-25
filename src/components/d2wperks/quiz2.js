@@ -107,7 +107,7 @@ export const quiz2 =  {
       "correctAnswer": "1",
       "messageForCorrectAnswer": "Last freebie. Now get ready, we're turning up the heat.",
       "messageForIncorrectAnswer": "This question was a bit different in nature - after all, I did include 'Sights' in the title.",
-      "explanation": "Hand Canon: Did you know, all hand cannon sights share the same icon! (With SOME exceptions.)",
+      "explanation": "Hand Cannon: Did you know, all hand cannon sights share the same icon! (With SOME exceptions.)",
       "point": "10"
     },
     {

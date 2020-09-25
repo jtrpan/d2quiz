@@ -10,7 +10,11 @@ export const quiz1 =  {
     "resultFilterCorrect": "Correct",
     "resultFilterIncorrect": "Incorrect",
     "nextQuestionBtn": "Next",
-    "resultPageHeaderText": "You have completed this section. You got <correctIndexLength> out of <questionLength> questions."
+    "resultPageHeaderText": "You have completed this section. You got <correctIndexLength> out of <questionLength> questions.",
+    "singleSelectionTagText": "Section 1",
+    "pickNumberOfSelection": "Choose <numberOfSelection>",
+    "difficultyTagText": "<questionDifficulty>",
+    "pointsTagText": "<questionPoints>",
   },
 
   "questions": [

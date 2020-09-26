@@ -1,12 +1,13 @@
 diff --git a/node_modules/react-quiz-component/lib/Core.js b/node_modules/react-quiz-component/lib/Core.js
-index d7681c2..13052eb 100644
+index d7681c2..93dd9d4 100644
 --- a/node_modules/react-quiz-component/lib/Core.js
 +++ b/node_modules/react-quiz-component/lib/Core.js
-@@ -266,7 +266,14 @@ var Card = function Card(_ref) {
+@@ -266,8 +266,15 @@ var Card = function Card(_ref) {
          dangerouslySetInnerHTML: (0, _helpers.rawMarkup)("Q".concat(question.questionIndex, ": ").concat(question.question))
        }), question.questionPic && _react.default.createElement("img", {
          src: question.questionPic,
 -        alt: "image"
+-      }), renderTags(answerSelectionType, question.correctAnswer.length, question.segment), _react.default.createElement("div", {
 +        alt: "image",
 +        className: "myImage",
 +        width: "10",
@@ -15,21 +16,44 @@ index d7681c2..13052eb 100644
 +        height: "10 px",
 +        maxWidth:"10%",
 +        maxHeight:"10%",
-       }), renderTags(answerSelectionType, question.correctAnswer.length, question.segment), _react.default.createElement("div", {
++      }), renderTags(answerSelectionType, question.correctAnswer.length, question.segment, question.segment2), _react.default.createElement("div", {
          className: "result-answer"
        }, renderAnswerInResult(question, userInputIndex)), _react.default.createElement(_Explanation.default, {
-@@ -370,7 +377,10 @@ var Card = function Card(_ref) {
+         question: question,
+@@ -328,7 +335,7 @@ var Card = function Card(_ref) {
+     });
+   };
+ 
+-  var renderTags = function renderTags(answerSelectionType, numberOfSelection, segment) {
++  var renderTags = function renderTags(answerSelectionType, numberOfSelection, segment, segment2) {
+     var singleSelectionTagText = appLocale.singleSelectionTagText,
+         multipleSelectionTagText = appLocale.multipleSelectionTagText,
+         pickNumberOfSelection = appLocale.pickNumberOfSelection;
+@@ -342,7 +349,9 @@ var Card = function Card(_ref) {
+       className: "number-of-selection"
+     }, pickNumberOfSelection.replace("<numberOfSelection>", numberOfSelection)), segment && _react.default.createElement("span", {
+       className: "selection-tag segment"
+-    }, segment));
++    }, segment), segment2 && _react.default.createElement("span", {
++      className: "selection-tag segment2"
++    }, segment2));
+   };
+ 
+   var renderResult = function renderResult() {
+@@ -370,8 +379,11 @@ var Card = function Card(_ref) {
      dangerouslySetInnerHTML: (0, _helpers.rawMarkup)(question && question.question)
    }), question && question.questionPic && _react.default.createElement("img", {
      src: question.questionPic,
 -    alt: "image"
+-  }), question && renderTags(answerSelectionTypeState, question.correctAnswer.length, question.segment), question && renderAnswers(question, buttons), showNextQuestionButton && _react.default.createElement("div", null, _react.default.createElement("button", {
 +    alt: "image",
 +    className: "myImage",
 +    maxWidth:"120%",
 +    maxHeight:"80%",
-   }), question && renderTags(answerSelectionTypeState, question.correctAnswer.length, question.segment), question && renderAnswers(question, buttons), showNextQuestionButton && _react.default.createElement("div", null, _react.default.createElement("button", {
++  }), question && renderTags(answerSelectionTypeState, question.correctAnswer.length, question.segment, question.segment2), question && renderAnswers(question, buttons), showNextQuestionButton && _react.default.createElement("div", null, _react.default.createElement("button", {
      onClick: function onClick() {
        return nextQuestion(currentQuestionIndex);
+     },
 diff --git a/node_modules/react-quiz-component/lib/Core.jsx b/node_modules/react-quiz-component/lib/Core.jsx
 index 588903e..13b68a0 100644
 --- a/node_modules/react-quiz-component/lib/Core.jsx
@@ -163,7 +187,7 @@ index e37263d..ff8522e 100644
  };
  
 diff --git a/node_modules/react-quiz-component/lib/styles.css b/node_modules/react-quiz-component/lib/styles.css
-index d039db8..f6b6767 100644
+index d039db8..f3bdced 100644
 --- a/node_modules/react-quiz-component/lib/styles.css
 +++ b/node_modules/react-quiz-component/lib/styles.css
 @@ -1,6 +1,6 @@
@@ -208,6 +232,14 @@ index d039db8..f6b6767 100644
  .react-quiz-container .quiz-synopsis {
    margin: 15px 0px;
  }
+@@ -159,3 +177,7 @@
+   background: #3db4b9;
+   margin-left: 5px;
+ }
++.react-quiz-container .selection-tag.segment2 {
++    background: #b93db7;
++    margin-left: 5px;
++}
 diff --git a/node_modules/react-quiz-component/package-lock.json b/node_modules/react-quiz-component/package-lock.json
 new file mode 100644
 index 0000000..267697b

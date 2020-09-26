@@ -1,4 +1,4 @@
-export const quiz2 =  {
+export const quiz3 =  {
   "quizTitle": "Section 2: Sights, Barrels, and Mags",
   "quizSynopsis": "You gotta be a real Destiny nerd to know these.",
 
@@ -181,4 +181,4 @@ export const quiz2 =  {
   ]
 }
 
-export default quiz2;
+export default quiz3;

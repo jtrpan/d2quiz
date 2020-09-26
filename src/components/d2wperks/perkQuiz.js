@@ -8,7 +8,8 @@ import './perkQuiz.style.js';
 import Particles from "react-particles-js";
 import Quiz from 'react-quiz-component';
 import { quiz1 } from './quiz.js';
-import quiz2 from "./quiz2";
+import { quiz2 } from "./quiz2";
+import { quiz3 } from "./quiz3";
 
 class perkQuiz extends Component {
     constructor(props) {
@@ -114,7 +115,7 @@ class perkQuiz extends Component {
                                 <Quiz quiz={quiz2} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction2}/>
                             </div>
                             <div className={this.state.quiz3Started?"quizBlock":"removed"}>
-                                Quiz 2 completed, Quiz 3 placeholder
+                                <Quiz quiz={quiz3} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction2}/>
                             </div>
                         </div>
                         <br/>

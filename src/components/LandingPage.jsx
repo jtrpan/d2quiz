@@ -80,6 +80,7 @@ class Landing extends Component {
                     }} />
                 <Styled.Heading>
                     <div className="landingBlock">
+                        <div className="transBlock">
                         <span className="helloTitle">
                           Welcome, young <span> </span>
                         </span>
@@ -105,6 +106,7 @@ class Landing extends Component {
                             </Fade>
                         </div>
                         <br/><br/>
+                        </div>
                         <Fade duration={1800} delay={3000}>
                         <a
                             href="quiz"

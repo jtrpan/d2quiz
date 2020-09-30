@@ -10,6 +10,7 @@ import Quiz from 'react-quiz-component';
 import { quiz1 } from './quiz.js';
 import { quiz2 } from "./quiz2";
 import { quiz3 } from "./quiz3";
+import { quiz4 } from "./quiz4";
 
 class perkQuiz extends Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class perkQuiz extends Component {
             quizStarted: false,
             quiz2Started: false,
             quiz3Started: false,
+            quiz4Started: false,
             correct: 0,
             incorrect: 0,
             totalPoints: 0,
@@ -43,6 +45,13 @@ class perkQuiz extends Component {
         console.log(obj);
         return(
             this.setState({quiz3Started: true,})
+        )
+    }
+
+    onCompleteAction3 = (obj) => {
+        console.log(obj);
+        return(
+            this.setState({quiz4Started: true,})
         )
     }
 
@@ -115,7 +124,10 @@ class perkQuiz extends Component {
                                 <Quiz quiz={quiz2} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction2}/>
                             </div>
                             <div className={this.state.quiz3Started?"quizBlock":"removed"}>
-                                <Quiz quiz={quiz3} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction2}/>
+                                <Quiz quiz={quiz3} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction3}/>
+                            </div>
+                            <div className={this.state.quiz4Started?"quizBlock":"removed"}>
+                                <Quiz quiz={quiz4} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction3}/>
                             </div>
                         </div>
                         <br/>

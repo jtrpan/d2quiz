@@ -11,7 +11,7 @@ export const quiz3 =  {
     "resultFilterIncorrect": "Incorrect",
     "nextQuestionBtn": "Next",
     "resultPageHeaderText": "You have completed this section. You got <correctIndexLength> out of <questionLength> questions.",
-    "singleSelectionTagText": "Section 2",
+    "singleSelectionTagText": "Section 3",
     "pickNumberOfSelection": "Choose <numberOfSelection>",
   },
 

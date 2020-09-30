@@ -187,7 +187,7 @@ index e37263d..ff8522e 100644
  };
  
 diff --git a/node_modules/react-quiz-component/lib/styles.css b/node_modules/react-quiz-component/lib/styles.css
-index d039db8..f3bdced 100644
+index d039db8..b18f40a 100644
 --- a/node_modules/react-quiz-component/lib/styles.css
 +++ b/node_modules/react-quiz-component/lib/styles.css
 @@ -1,6 +1,6 @@
@@ -203,7 +203,7 @@ index d039db8..f3bdced 100644
  
  .react-quiz-container .questionWrapper img {
 -  width: 100%;
-+  width: 1000%;
++  width: 10%;
  }
  
  .react-quiz-container .answerBtn {

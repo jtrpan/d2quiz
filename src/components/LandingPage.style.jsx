@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Heading = styled.h1`
   font-size: calc(28px + (64 - 28) * ((100vw - 220px) / (1700 - 320))) !important;
-  text-align: left;
+  text-align: center;
   font-family: Poppins;
   white-space: nowrap;
   overflow: hidden;
@@ -15,7 +15,6 @@ export const Heading = styled.h1`
     user-select: none;  
     -webkit-tap-highlight-color: transparent;
     transition: transform 0.4s ease-in-out;
-    pointer-events: auto;
     text-align: center;
 
     :active {
@@ -48,15 +47,15 @@ export const Heading = styled.h1`
   .scrollTitle {
     font-family: Raleway;
       color: #C9BEFF;
-      pointer-events: none;
       text-align: center;
+    pointer-events: none;
   }
 
   .helloTitle {
     font-family: Raleway;
     color: #ACA9BB;
-    pointer-events: none;
     text-align: center;
+    pointer-events: none;
   }
 
   .landingBlock {
@@ -64,9 +63,13 @@ export const Heading = styled.h1`
     top: 60%;
     left: 50%;
     transform: translate(-50%, -80%);
-    color: #8B3881
-    pointer-events: none;
+    color: #8B3881;
     text-align: center;
+    pointer-events: auto;
+  }
+  
+  .transBlock {
+    pointer-events: none;
   }
 `;
 

@@ -50,6 +50,18 @@ export const Heading = styled.h1`
   max-height: 10%;
 }
 
+.endBlock {
+  position: absolute;
+  left: 22%;
+  top: 10%;
+  right: 0;
+  text-align: left;
+  font-family: Montserrat;
+  color: #c0c3c4;
+  max-width: 55%;
+  max-height: 60%;
+}
+
 @media (min-width: 1400px){
   .break-small {
     display: none;

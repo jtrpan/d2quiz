@@ -21,6 +21,7 @@ class perkQuiz extends Component {
             quiz2Started: false,
             quiz3Started: false,
             quiz4Started: false,
+            finished: false,
             correct: 0,
             incorrect: 0,
             totalPoints: 0,
@@ -52,6 +53,13 @@ class perkQuiz extends Component {
         console.log(obj);
         return(
             this.setState({quiz4Started: true,})
+        )
+    }
+
+    onCompleteAction4 = (obj) => {
+        console.log(obj);
+        return(
+            this.setState({finished: true,})
         )
     }
 
@@ -117,7 +125,6 @@ class perkQuiz extends Component {
 
 
 
-
                         <div className={this.state.quizStarted?"quizBlock":"removed"}>
                             <Quiz quiz={quiz1} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction1}/>
                             <div className={this.state.quiz2Started?"quizBlock":"removed"}>
@@ -127,8 +134,27 @@ class perkQuiz extends Component {
                                 <Quiz quiz={quiz3} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction3}/>
                             </div>
                             <div className={this.state.quiz4Started?"quizBlock":"removed"}>
-                                <Quiz quiz={quiz4} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction3}/>
+                                <Quiz quiz={quiz4} showInstantFeedback={true} showDefaultResult={false} customResultPage={this.renderCustomResultPage} onComplete={this.onCompleteAction4}/>
                             </div>
+                        </div>
+                        <div className={this.state.finished?"endBlock":"removed"}>
+                            <span>Congrats, you've finished the quiz! While your score is saved internally, the scoring process itself is actually a little complicated.</span>
+                            <br/><br/>
+                            <span>I'm working on the logic right now, and my next step is going to be displaying the total score. After that, I'll add randomized questions.</span>
+                            <br/><br/>
+                            <span>For now, let's just say that you did - really well!</span>
+                            <br/><br/>
+                            <span>I'm sure you did well - I wouldn't have shared this with you if you weren't an avid Destiny fan.</span>
+                            <br/><br/>
+                            <span>I'm always looking for comments, inputs, and more questions - so if you have any ideas, pm me on Discord.</span>
+                            <br/><br/>
+                            <span>Special thanks to those who helped test and come up with questions - I really appreciate it.</span>
+                            <br/>
+                            <span>(Sorry you had to go through the same questions over and over again!)</span>
+                            <br/><br/>
+                            <span>Thank you for playing, I really hope you enjoyed it!</span>
+                            <br/><br/>
+                            <span>~ Trissin</span>
                         </div>
                         <br/>
                         <br/>

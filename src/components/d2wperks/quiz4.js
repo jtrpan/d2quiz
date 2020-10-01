@@ -181,6 +181,24 @@ export const quiz4 =  {
     {
       "question": "Which exotic weapon does this perk belong to?",
       "questionType": "photo",
+      "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/d/d2/Mad_Scientist_icon.png",
+      "answers": [
+        "https://d2.destinygamewiki.com/mediawiki/images/e/e5/Heir_apparent_icon1.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/0/00/Sleeper_Simulant_icon1.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/b/bf/IMG_8808.JPG",
+        "https://d2.destinygamewiki.com/mediawiki/images/0/0a/The_wardcliff_coil_icon1.png"
+      ],
+      "correctAnswer": "4",
+      "messageForCorrectAnswer": "If you haven't blown yourself up by accident before, then you're doing something wrong.",
+      "messageForIncorrectAnswer": "Coldheart used to be the go-to for boss damage in Year 1. How times have changed.",
+      "explanation": "The Wardcliff Coil - Mad Scientist: This weapon fires a volley of rockets.",
+      "segment": "Medium",
+      "segment2": "10 Points",
+      "point": "10",
+    },
+    {
+      "question": "Which exotic weapon does this perk belong to?",
+      "questionType": "photo",
       "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/5/54/Sun_blast_icon1.png",
       "answers": [
         "https://d2.destinygamewiki.com/mediawiki/images/7/7b/Telesto_icon2.jpg",

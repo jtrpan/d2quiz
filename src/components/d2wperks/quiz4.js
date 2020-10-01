@@ -55,6 +55,24 @@ export const quiz4 =  {
     {
       "question": "Which exotic weapon does this perk belong to?",
       "questionType": "photo",
+      "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/2/2a/Disease_Vector_icon.png",
+      "answers": [
+        "https://d2.destinygamewiki.com/mediawiki/images/0/00/Sleeper_Simulant_icon1.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/e/e1/Hard_light_icon1.png",
+        "https://d2.destinygamewiki.com/mediawiki/images/c/cf/Outbreak_perfected_icon1.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/a/aa/Darci_icon1.png"
+      ],
+      "correctAnswer": "3",
+      "messageForCorrectAnswer": "~directive = KILL while enemies = PRESENT: execute(directive)~",
+      "messageForIncorrectAnswer": "A secret exotic - Outbreak Perfected. Originally known as Outbreak Prime, from D1.",
+      "explanation": "Outbreak Perfected - Disease Vector: Increases nanite damage. Enemies that die with nanites attached to them generate additional nanites.",
+      "segment": "Easy",
+      "segment2": "5 Points",
+      "point": "5",
+    },
+    {
+      "question": "Which exotic weapon does this perk belong to?",
+      "questionType": "photo",
       "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/d/db/Poison_arrows_icon1.png",
       "answers": [
         "https://d2.destinygamewiki.com/mediawiki/images/4/45/Wish-ender_icon1.jpg",
@@ -109,24 +127,6 @@ export const quiz4 =  {
     {
       "question": "Which exotic weapon does this perk belong to?",
       "questionType": "photo",
-      "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/e/e2/Cold_fusion_icon1.png",
-      "answers": [
-        "https://d2.destinygamewiki.com/mediawiki/images/b/b3/Arbalest_icon1.jpg",
-        "https://d2.destinygamewiki.com/mediawiki/images/archive/2/25/20200130235648%21Coldheart_icon1.png",
-        "https://d2.destinygamewiki.com/mediawiki/images/c/c4/Prometheus_lens_icon1.png",
-        "https://d2.destinygamewiki.com/mediawiki/images/1/1d/Skyburners_oath_icon1.png"
-      ],
-      "correctAnswer": "2",
-      "messageForCorrectAnswer": "Ah, another Year 1 veteran. The good old days of freezing Calus with Coldheart.",
-      "messageForIncorrectAnswer": "Coldheart used to be the go-to for boss damage in Year 1. How times have changed.",
-      "explanation": "Coldheart - Cold Fusion: This weapon shoots a steady cold fusion-powered laser.",
-      "segment": "Medium",
-      "segment2": "10 Points",
-      "point": "10",
-    },
-    {
-      "question": "Which exotic weapon does this perk belong to?",
-      "questionType": "photo",
       "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/0/01/Big-game_hunter_icon1.png",
       "answers": [
         "https://d2.destinygamewiki.com/mediawiki/images/d/de/Cerberus1_icon1.jpg",
@@ -159,6 +159,114 @@ export const quiz4 =  {
       "segment": "Medium",
       "segment2": "10 Points",
       "point": "10",
+    },
+    {
+      "question": "Which exotic weapon does this perk belong to?",
+      "questionType": "photo",
+      "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/e/e2/Cold_fusion_icon1.png",
+      "answers": [
+        "https://d2.destinygamewiki.com/mediawiki/images/b/b3/Arbalest_icon1.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/archive/2/25/20200130235648%21Coldheart_icon1.png",
+        "https://d2.destinygamewiki.com/mediawiki/images/c/c4/Prometheus_lens_icon1.png",
+        "https://d2.destinygamewiki.com/mediawiki/images/1/1d/Skyburners_oath_icon1.png"
+      ],
+      "correctAnswer": "2",
+      "messageForCorrectAnswer": "Ah, another Year 1 veteran. The good old days of freezing Calus with Coldheart.",
+      "messageForIncorrectAnswer": "Coldheart used to be the go-to for boss damage in Year 1. How times have changed.",
+      "explanation": "Coldheart - Cold Fusion: This weapon shoots a steady cold fusion-powered laser.",
+      "segment": "Medium",
+      "segment2": "10 Points",
+      "point": "10",
+    },
+    {
+      "question": "Which exotic weapon does this perk belong to?",
+      "questionType": "photo",
+      "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/5/54/Sun_blast_icon1.png",
+      "answers": [
+        "https://d2.destinygamewiki.com/mediawiki/images/7/7b/Telesto_icon2.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/9/9c/Sunshot_icon2.png",
+        "https://d2.destinygamewiki.com/mediawiki/images/7/70/Witherhoard_icon1.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/d/da/Graviton_lance_icon1.png"
+      ],
+      "correctAnswer": "2",
+      "messageForCorrectAnswer": "For many of us, this was our very first exotic weapon. Do you remember those days?",
+      "messageForIncorrectAnswer": "Sunshot was once given to players as part of the Red War campaign - but now, it is a random drop.",
+      "explanation": "Sunshot - Sun Blast: Targets killed with Sunshot explode in Solar energy.",
+      "segment": "Hard",
+      "segment2": "20 Points",
+      "point": "20",
+    },
+    {
+      "question": "Which exotic weapon does this perk belong to?",
+      "questionType": "photo",
+      "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/5/53/Superconductor_icon1.png",
+      "answers": [
+        "https://d2.destinygamewiki.com/mediawiki/images/6/6b/Ruinous_Effigy_icon.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/5/57/Riskrunner_icon1.png",
+        "https://d2.destinygamewiki.com/mediawiki/images/b/bf/IMG_8808.JPG",
+        "https://d2.destinygamewiki.com/mediawiki/images/d/df/Devil%27s_ruin_icon1.jpg"
+      ],
+      "correctAnswer": "2",
+      "messageForCorrectAnswer": "Another OG Year 1 exotic. It still slaps, to this day.",
+      "messageForIncorrectAnswer": "This one was hard, and the icon doesn't really make sense either. The more you know!",
+      "explanation": "Riskrunner - Superconductor: When Arc Conductor is active, shots fired have the chance to become chain lightning and return ammo.",
+      "segment": "Hard",
+      "segment2": "20 Points",
+      "point": "20",
+    },
+    {
+      "question": "Which exotic weapon does this perk belong to?",
+      "questionType": "photo",
+      "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/c/cf/Foaf_icon1.png",
+      "answers": [
+        "https://d2.destinygamewiki.com/mediawiki/images/1/10/MIDA_multi-tool_icon1.png",
+        "https://d2.destinygamewiki.com/mediawiki/images/6/6d/Symmetry_icon1.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/1/1d/Skyburners_oath_icon1.png",
+        "https://d2.destinygamewiki.com/mediawiki/images/4/42/Jade_rabbit_osiris_icon1.png"
+      ],
+      "correctAnswer": "4",
+      "messageForCorrectAnswer": "This gun - super underrated. Probably my favourite PvP weapon to this day.",
+      "messageForIncorrectAnswer": "If you haven't tried this gun before, give it a shot! It's stronger than you think.",
+      "explanation": "The Jade Rabbit - The Fate of All Fools: Chain body shots to gain bonus damage on your next precision shot and return ammo to the magazine.",
+      "segment": "Hard",
+      "segment2": "20 Points",
+      "point": "20",
+    },
+    {
+      "question": "Which exotic weapon does this perk belong to?",
+      "questionType": "photo",
+      "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/1/10/Conserve_momentum_icon1.png",
+      "answers": [
+        "https://d2.destinygamewiki.com/mediawiki/images/1/17/Traveler%27s_chosen_icon1.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/6/6b/Ruinous_Effigy_icon.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/b/bd/Divinity_icon1.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/0/05/Merciless_icon1.png"
+      ],
+      "correctAnswer": "4",
+      "messageForCorrectAnswer": "Lots of the old timers in this quiz - another OG Year 1 weapon.",
+      "messageForIncorrectAnswer": "Nobody saw it coming. Believe it or not, this used to be the king of DPS at one point in time.",
+      "explanation": "Merciless - Conserve Momentum: Non-lethal hits with projectiles make this weapon charge faster until its wielder gets a kill.",
+      "segment": "Hard",
+      "segment2": "20 Points",
+      "point": "20",
+    },
+    {
+      "question": "Which exotic weapon does this perk belong to?",
+      "questionType": "photo",
+      "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/f/f2/Fan_fire_icon1.png",
+      "answers": [
+        "https://d2.destinygamewiki.com/mediawiki/images/c/c7/The_chaperone_icon1.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/c/c6/The_last_word_icon1.jpg",
+        "https://d2.destinygamewiki.com/mediawiki/images/8/85/The_prospector_icon1.png",
+        "https://d2.destinygamewiki.com/mediawiki/images/9/92/The_huckleberry_icon1.jpg"
+      ],
+      "correctAnswer": "2",
+      "messageForCorrectAnswer": "You've yee'd your last haw. This rodeo is now over - let's see how you did.",
+      "messageForIncorrectAnswer": "You've yee'd your last haw. This rodeo is now over - let's see how you did.",
+      "explanation": "The Last Word - Fan Fire: This weapon can be fired quickly and continuously. Faster reload and increased accuracy on successive hip-fire damage.",
+      "segment": "Hard",
+      "segment2": "20 Points",
+      "point": "20",
     },
   ]
 }

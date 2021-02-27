@@ -1,0 +1,286 @@
+diff --git a/node_modules/react-quiz-component/lib/Core.js b/node_modules/react-quiz-component/lib/Core.js
+index 46b0370..32df853 100644
+--- a/node_modules/react-quiz-component/lib/Core.js
++++ b/node_modules/react-quiz-component/lib/Core.js
+@@ -223,7 +223,7 @@ var Core = function Core(_ref) {
+         className: "answerBtn btn " + answerBtnCorrectClassName + answerBtnIncorrectClassName
+       }, questionType === 'text' && _react.default.createElement("span", null, answer), questionType === 'photo' && _react.default.createElement("img", {
+         src: answer,
+-        alt: "image"
++        alt: "image1"
+       })));
+     });
+   };
+@@ -261,8 +261,9 @@ var Core = function Core(_ref) {
+         dangerouslySetInnerHTML: (0, _helpers.rawMarkup)("Q".concat(question.questionIndex, ": ").concat(question.question))
+       }), question.questionPic && _react.default.createElement("img", {
+         src: question.questionPic,
+-        alt: "image"
+-      }), renderTags(answerSelectionType, question.correctAnswer.length, question.segment), _react.default.createElement("div", {
++        alt: "image2",
++        className: "myImage",
++      }), renderTags(answerSelectionType, question.correctAnswer.length, question.segment, question.segment2), _react.default.createElement("div", {
+         className: "result-answer"
+       }, renderAnswerInResult(question, userInputIndex)), _react.default.createElement(_Explanation.default, {
+         question: question,
+@@ -310,7 +311,8 @@ var Core = function Core(_ref) {
+         }
+       }, questionType === 'text' && _react.default.createElement("span", null, answer), questionType === 'photo' && _react.default.createElement("img", {
+         src: answer,
+-        alt: "image"
++        height: 50,
++        alt: "image4"
+       })) : _react.default.createElement("button", {
+         onClick: function onClick() {
+           return onClickAnswer(index);
+@@ -318,12 +320,13 @@ var Core = function Core(_ref) {
+         className: "answerBtn btn"
+       }, questionType === 'text' && answer, questionType === 'photo' && _react.default.createElement("img", {
+         src: answer,
+-        alt: "image"
++        height: 50,
++        alt: "image3"
+       })));
+     });
+   };
+ 
+-  var renderTags = function renderTags(answerSelectionType, numberOfSelection, segment) {
++  var renderTags = function renderTags(answerSelectionType, numberOfSelection, segment, segment2) {
+     var singleSelectionTagText = appLocale.singleSelectionTagText,
+         multipleSelectionTagText = appLocale.multipleSelectionTagText,
+         pickNumberOfSelection = appLocale.pickNumberOfSelection;
+@@ -337,7 +340,9 @@ var Core = function Core(_ref) {
+       className: "number-of-selection"
+     }, pickNumberOfSelection.replace("<numberOfSelection>", numberOfSelection)), segment && _react.default.createElement("span", {
+       className: "selection-tag segment"
+-    }, segment));
++    }, segment), segment2 && _react.default.createElement("span", {
++      className: "selection-tag segment2"
++    }, segment2));
+   };
+ 
+   var renderResult = function renderResult() {
+@@ -365,8 +370,11 @@ var Core = function Core(_ref) {
+     dangerouslySetInnerHTML: (0, _helpers.rawMarkup)(question && question.question)
+   }), question && question.questionPic && _react.default.createElement("img", {
+     src: question.questionPic,
+-    alt: "image"
+-  }), question && renderTags(answerSelectionTypeState, question.correctAnswer.length, question.segment), question && renderAnswers(question, buttons), showNextQuestionButton && _react.default.createElement("div", null, _react.default.createElement("button", {
++    alt: "image",
++    className: "myImage",
++    maxWidth:"120%",
++    maxHeight:"80%",
++  }), question && renderTags(answerSelectionTypeState, question.correctAnswer.length, question.segment, question.segment2), question && renderAnswers(question, buttons), showNextQuestionButton && _react.default.createElement("div", null, _react.default.createElement("button", {
+     onClick: function onClick() {
+       return nextQuestion(currentQuestionIndex);
+     },
+diff --git a/node_modules/react-quiz-component/lib/Core.jsx b/node_modules/react-quiz-component/lib/Core.jsx
+index 588903e..4187e34 100644
+--- a/node_modules/react-quiz-component/lib/Core.jsx
++++ b/node_modules/react-quiz-component/lib/Core.jsx
+@@ -246,7 +246,7 @@ class Core extends Component {
+     
+     if(isResultPage) {
+       return (
+-        <div className="explaination">
++        <div className="explanation">
+           {explanation}
+         </div>
+       )
+@@ -299,7 +299,7 @@ class Core extends Component {
+         <div key={index}>
+            <button disabled={true} className={"answerBtn btn " + answerBtnCorrectClassName + answerBtnIncorrectClassName}>
+             { questionType == 'text' && <span>{ answer }</span> }
+-            { questionType == 'photo' && <img src={ answer } /> }
++            { questionType == 'photo' && <img width={'20'} height={'20'} src={ answer } /> }
+           </button>
+         </div>
+       )
+@@ -362,14 +362,14 @@ class Core extends Component {
+         return (
+           <button key={index} disabled={ buttons[index].disabled || false } className={`${buttons[index].className} answerBtn btn`}  onClick={() => this.checkAnswer(index+1, correctAnswer, answerSelectionType)}>
+             { questionType == 'text' && <span>{answer}</span> }
+-            { questionType == 'photo' && <img src={answer} /> }
++            { questionType == 'photo' && <img width={'20'} height={'20'} src={answer} /> }
+           </button>
+         )
+       } else {
+         return (
+           <button key={index} onClick={() => this.checkAnswer(index+1, correctAnswer, answerSelectionType)} className="answerBtn btn">
+           { questionType == 'text' && answer }
+-          { questionType == 'photo' && <img src={answer}/> }
++          { questionType == 'photo' && <img width={'20'} height={'20'} src={answer}/> }
+           </button>
+         )
+       }
+@@ -454,12 +454,15 @@ class Core extends Component {
+           <div className="questionWrapperBody">
+             <div className="questionModal">
+               {incorrectAnswer && showInstantFeedback && 
+-                <div className="alert incorrect">{ this.renderMessageforIncorrectAnswer(question) }</div>
++                <div className="alert incorrect">
++                  { this.renderMessageforIncorrectAnswer(question) }
++                  { this.renderExplanation(question, true) }
++                </div>
+               }
+               { correctAnswer && showInstantFeedback && 
+                 <div className="alert correct">
+                   { this.renderMessageforCorrectAnswer(question) } 
+-                  { this.renderExplanation(question, false) }
++                  { this.renderExplanation(question, true) }
+                 </div>
+               }
+             </div>
+@@ -474,6 +477,9 @@ class Core extends Component {
+             { showNextQuestionButton &&
+               <div><button onClick={() => this.nextQuestion(currentQuestionIndex)} className="nextQuestionBtn btn">{appLocale.nextQuestionBtn}</button></div>
+             }
++            <h2>
++              Your current score is {correctPoints} out of {totalPoints} total points.
++            </h2>
+           </div>
+         }
+         { endQuiz && showDefaultResult && customResultPage == null &&
+diff --git a/node_modules/react-quiz-component/lib/Locale.js b/node_modules/react-quiz-component/lib/Locale.js
+index a225d57..c0f3dca 100644
+--- a/node_modules/react-quiz-component/lib/Locale.js
++++ b/node_modules/react-quiz-component/lib/Locale.js
+@@ -16,6 +16,7 @@ var defaultLocale = {
+   "resultPagePoint": "You scored <correctPoints> out of <totalPoints>.",
+   "singleSelectionTagText": "Single Selection",
+   "multipleSelectionTagText": "Multiple Selection",
+-  "pickNumberOfSelection": "Pick <numberOfSelection>"
++  "pickNumberOfSelection": "Choose <numberOfSelection>",
++
+ };
+ exports.defaultLocale = defaultLocale;
+\ No newline at end of file
+diff --git a/node_modules/react-quiz-component/lib/Question.js b/node_modules/react-quiz-component/lib/Question.js
+index 63bb539..3d58524 100644
+--- a/node_modules/react-quiz-component/lib/Question.js
++++ b/node_modules/react-quiz-component/lib/Question.js
+@@ -185,7 +185,7 @@ function (_Component) {
+ 
+       if (isResultPage) {
+         return _react.default.createElement("div", {
+-          className: "explaination"
++          className: "explanation"
+         }, explanation);
+       }
+ 
+@@ -240,7 +240,9 @@ function (_Component) {
+             disabled: true,
+             className: "answerBtn btn" + (index + 1 == question.correctAnswer ? ' correct ' : '') + (userInputIndex != question.correctAnswer && index + 1 == userInputIndex ? ' incorrect ' : '')
+           }, question.questionType == 'text' && _react.default.createElement("span", null, answer), question.questionType == 'photo' && _react.default.createElement("img", {
+-            src: answer
++            src: answer,
++            width: '20%',
++            height: '20%'
+           })));
+         })), _this.renderExplanation(question, true));
+       });
+@@ -303,7 +305,9 @@ function (_Component) {
+               return _this2.checkAnswer(index + 1, question.correctAnswer);
+             }
+           }, question.questionType == 'text' && _react.default.createElement("span", null, answer), question.questionType == 'photo' && _react.default.createElement("img", {
+-            src: answer
++            src: answer,
++            width: '20%',
++            height: '20%'
+           }));
+         } else {
+           return _react.default.createElement("button", {
+@@ -313,7 +317,9 @@ function (_Component) {
+             },
+             className: "answerBtn btn"
+           }, question.questionType == 'text' && answer, question.questionType == 'photo' && _react.default.createElement("img", {
+-            src: answer
++            src: answer,
++            width: '20%',
++            height: '20%'
+           }));
+         }
+       }), this.state.showNextQuestionButton && _react.default.createElement("div", null, _react.default.createElement("button", {
+diff --git a/node_modules/react-quiz-component/lib/Question.jsx b/node_modules/react-quiz-component/lib/Question.jsx
+index 69ed568..f427ed0 100644
+--- a/node_modules/react-quiz-component/lib/Question.jsx
++++ b/node_modules/react-quiz-component/lib/Question.jsx
+@@ -159,7 +159,7 @@ class Question extends Component {
+     
+     if(isResultPage) {
+       return (
+-        <div className="explaination">
++        <div className="explanation">
+           {explanation}
+         </div>
+       )
+@@ -213,7 +213,7 @@ class Question extends Component {
+                   <div key={index}>
+                      <button disabled={true} className={"answerBtn btn" + (index+1 == question.correctAnswer ? ' correct ': '') + (userInputIndex != question.correctAnswer && index+1 == userInputIndex ? ' incorrect ' : '')}>
+                       { question.questionType == 'text' && <span>{ answer }</span> }
+-                      { question.questionType == 'photo' && <img src={ answer } /> }
++                      { question.questionType == 'photo' && <img width = {'20%'} height = {'20%'} src={ answer } /> }
+                     </button>
+                   </div>
+                 )
+@@ -266,14 +266,14 @@ class Question extends Component {
+                   return (
+                     <button key={index} disabled={ this.state.buttons[index].disabled || false } className={`${this.state.buttons[index].className} answerBtn btn`}  onClick={() => this.checkAnswer(index+1, question.correctAnswer)}>
+                       { question.questionType == 'text' && <span>{answer}</span> }
+-                      { question.questionType == 'photo' && <img src={answer} /> }
++                      { question.questionType == 'photo' && <img width={'20%'} height={'20%'} src={answer} /> }
+                     </button>
+                   )
+                 } else {
+                   return (
+                     <button key={index} onClick={() => this.checkAnswer(index+1, question.correctAnswer)} className="answerBtn btn">
+                     { question.questionType == 'text' && answer }
+-                    { question.questionType == 'photo' && <img src={answer}/> }
++                    { question.questionType == 'photo' && <img width={'20%'} height={'20%'} src={answer}/> }
+                     </button>
+                   )
+                 }
+diff --git a/node_modules/react-quiz-component/lib/styles.css b/node_modules/react-quiz-component/lib/styles.css
+index d039db8..67ec6c8 100644
+--- a/node_modules/react-quiz-component/lib/styles.css
++++ b/node_modules/react-quiz-component/lib/styles.css
+@@ -1,6 +1,6 @@
+ .react-quiz-container {
+   margin: 20px;
+-  width: 500px;
++  width: 1000px;
+ }
+ 
+ .react-quiz-container .startQuizWrapper {
+@@ -42,7 +42,7 @@
+ }
+ 
+ .react-quiz-container .questionModal .alert {
+-  padding: 20px;
++  padding: 10px;
+   margin-bottom: 21px;
+   border: 1px solid transparent;
+   border-radius: 2px;
+@@ -59,11 +59,11 @@
+ }
+ 
+ .react-quiz-container .questionWrapper img {
+-  width: 100%;
++  width: 20%;
+ }
+ 
+ .react-quiz-container .answerBtn {
+-  width: 100%;
++  width: 30%;
+ }
+ 
+ .react-quiz-container .startQuizWrapper .startQuizBtn {
+@@ -93,7 +93,7 @@
+ }
+ 
+ .react-quiz-container .result-answer-wrapper .explanation {
+-  padding: 20px;
++  padding: 10px;
+   margin: 0px 20px 20px 20px;
+   border: 1px solid #e8e8e8;
+ }

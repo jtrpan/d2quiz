@@ -27,7 +27,7 @@ export const quiz3 =  {
       "question": "What frame is this?",
       "questionPic": "https://d2.destinygamewiki.com/mediawiki/images/7/74/Aggressive_frame_icon1.png",
       "correctAnswer": "4",
-      "messageForCorrectAnswer": "You pay attention to your guns - that's good.",
+      "messageForCorrectAnswer": "You pay attention to your gear - that's good.",
       "messageForIncorrectAnswer": "We see it all the time, but don't always pay close attention.",
       "explanation": "Aggressive Frame: High damage, high recoil.",
       "segment": "Medium",
@@ -45,7 +45,7 @@ export const quiz3 =  {
         "Archer's Tempo"
       ],
       "correctAnswer": "2",
-      "messageForCorrectAnswer": "Good job - but also, bless your soul. That's a lot of gambit.",
+      "messageForCorrectAnswer": "Good job - but also, bless your soul if you suffered through Gambit for this.",
       "messageForIncorrectAnswer": "This was a unique perk, exclusive to the Gambit pinnacle bow: Hush.",
       "explanation": "Archer's Gambit: Hip-fire precision hits grant a massive draw-speed bonus for a short duration.",
       "segment": "Medium",
@@ -63,8 +63,8 @@ export const quiz3 =  {
         "Last Stand"
       ],
       "correctAnswer": "2",
-      "messageForCorrectAnswer": "This was probably an easy one if you're a frequent Trials player. Props!",
-      "messageForIncorrectAnswer": "This was probably pretty difficult if you don't play Trials often. So basically, you're sane.",
+      "messageForCorrectAnswer": "Freebie if you're a Trials player. Props!",
+      "messageForIncorrectAnswer": "This was probably pretty difficult if you don't play Trials often. Same here, friend.",
       "explanation": "Celerity: Gain buffs to target acquisition, flinch, handling, and reload speed while you are the last living member of your fireteam.",
       "segment": "Medium",
       "segment2": "10 Points",
@@ -81,7 +81,7 @@ export const quiz3 =  {
         "Meganeura"
       ],
       "correctAnswer": "4",
-      "messageForCorrectAnswer": "Good! And what an underrated perk, seriously.   :(",
+      "messageForCorrectAnswer": "Look how they massacred my boy   :(",
       "messageForIncorrectAnswer": "Another unique perk, exclusive to the Vanguard pinnacle scout: Oxygen SR4.",
       "explanation": "Meganeura: Dragonfly deals more damage based on the number of precision hits dealt beforehand.",
       "segment": "Medium",
@@ -99,8 +99,8 @@ export const quiz3 =  {
         "Radar Tuner"
       ],
       "correctAnswer": "1",
-      "messageForCorrectAnswer": "I'm not quite sure how often people use Revoker - this might've been obvious.",
-      "messageForIncorrectAnswer": "You don't have Revoker, the Crucible pinnacle sniper? Neither do I.",
+      "messageForCorrectAnswer": "Now that we're feeling good again let's get into our last section.",
+      "messageForIncorrectAnswer": "Crucible pinnacle sniper rifle: Revoker. (I don't have it either!)",
       "explanation": "Reversal of Fortune: Missing a shot returns the bullet to the magazine after a short duration.",
       "segment": "Medium",
       "segment2": "10 Points",

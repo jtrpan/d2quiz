@@ -41,12 +41,12 @@ export const Heading = styled.h1`
 .quizBlock {
   position: absolute;
   left: 22%;
-  top: 10%;
+  top: 8%;
   right: 0;
   text-align: left;
   font-family: Montserrat;
   color: #c0c3c4;
-  max-width: 10%;
+  max-width: 40%;
   max-height: 10%;
 }
 

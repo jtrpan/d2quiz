@@ -1,6 +1,6 @@
 # [Destiny 2 Perk Trivia](https://master.d23nkvxb90w66x.amplifyapp.com/) ![version](https://img.shields.io/badge/version-0.8-blue.svg)
 
-![img.png](src/assets/screenshots/img.png)
+![img.png](src/assets/screenshots/img_title.png)
 
 ### First Release
 
@@ -23,16 +23,25 @@ For now, there is just one static quiz - that's it. In the future, I would like 
     
 ## Versions
 
-####0.1: Test Release: Proof of Concept. 3 Questions, no scoring, no feedback.
-####0.2: Test Release: Home Screen & Question Expansion - added questions for columns 1 & 2.
-####0.3: Added feedback after answering questions. Improved home screen. Added more questions for part 1. 
-####0.4: Added 5 questions - 'obscure' perks (pinnacles) and frames.
-####0.5: Testing: Photo Response. Added 5 questions (exotic perks) with image answers.
-####0.6: Added 10 more exotics to the last section.
-####0.7: Fixed tags and adjusted image sizes.
-####0.8: Implemented scoring, adjusted descriptions, and refined image sizing for most resolutions.
-####0.9 (in progress): Question randomization from a larger bank.
-####1.0 (planned): Mobile support.
+**0.1: Test Release:** Proof of Concept. 3 Questions, no scoring, no feedback.
+
+**0.2: Test Release:** Home Screen & Question Expansion - added questions for columns 1 & 2.
+
+**0.3:** Added feedback after answering questions. Improved home screen. Added more questions for part 1. 
+
+**0.4:** Added 5 questions - 'obscure' perks (pinnacles) and frames.
+
+**0.5: Testing:** Photo Response. Added 5 questions (exotic perks) with image answers.
+
+**0.6:** Added 10 more exotics to the last section.
+
+**0.7:** Fixed tags and adjusted image sizes.
+
+**0.8:** Implemented scoring, adjusted descriptions, and refined image sizing for most resolutions.
+
+**0.9 (in progress)** Question randomization from a larger bank.
+
+**1.0 (planned):** Mobile support.
 
 
 
@@ -40,8 +49,10 @@ For now, there is just one static quiz - that's it. In the future, I would like 
 [LICENSE]: ./LICENSE.md
 
 ## Social Media
-I'm not great with social media, but I try my best.
-#####[My Website](https://jtrpan.azurewebsites.net)
-#####[Facebook](https://www.facebook.com/james.trissin/)
-#####[Twitter](https://twitter.com/jtrpan)
-#####[Linkedin](https://www.linkedin.com/in/jtrpan/)
+[My Website](https://jtrpan.azurewebsites.net)
+
+[Facebook](https://www.facebook.com/james.trissin/)
+
+[Twitter](https://twitter.com/jtrpan)
+
+[Linkedin](https://www.linkedin.com/in/jtrpan/)
